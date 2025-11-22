@@ -87,10 +87,21 @@ def main():
         "icd10_do24_excluding_do244",
         "diabetes_atc_antihyperglycemic",
         "weights",
-        "Thiazolidinediones"
-        "Glucagon-like peptide 1 agonists"
-
+        "Thiazolidinediones",
+        "Glucagon-like peptide 1 agonists",
+        "egfr_low",
+        "aortic_dissection",
+        "cardiovascular_mortality",
+        "ertugliflozin",
+        "glucagon_like_peptide_1_agonists",
+        "hemoglobin_a1c_high",
     ]
+    
+    # Remap names before prettifying
+    rename_dict = {
+        "history_stroke_tia": "history_stroke",
+        # Add other mappings here
+    }
     
     # Paths (assuming script run from project root)
     DATA_DIR = "data/stats"
@@ -129,6 +140,9 @@ def main():
     rows = []
     for _, row in combined_raw.iterrows():
         criterion = row["criterion"]
+        
+        # Apply renaming
+        criterion = rename_dict.get(criterion, criterion)
         
         val_ctrl, type_ctrl = format_cell(row, "Control")
         val_exp, type_exp = format_cell(row, "Exposed")
