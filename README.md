@@ -2,7 +2,7 @@
 
 Results and plotting scripts for the semaglutide target trial emulation (TTE) study on Danish hospital EHR data.
 
-Effect estimates were obtained with the causal pipeline in [PHAIR_EHR](https://github.com/kirilklein/PHAIR_EHR) (transformer-based propensity and outcome models on MEDS-formatted EHR) and [CausalEstimate](https://github.com/kirilklein/CausalEstimate) (IPW / TMLE estimators).
+Effect estimates were obtained with the causal pipeline in [BONSAI Causal](https://github.com/kirilklein/bonsai-causal) (transformer-based propensity and outcome models on MEDS-formatted EHR) and [CausalEstimate](https://github.com/kirilklein/CausalEstimate) (IPW / TMLE estimators).
 
 ## Contents
 
